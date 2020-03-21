@@ -1,12 +1,26 @@
 <?php
-error_reporting(0);
-$string = "Halo Arkademian";
 
-$PecahStr = explode(" ", $string);
+function cariterpanjang($huruf)
+{	
 
-for ( $i = 0; $i < count( $PecahStr ); $i++ ) {
-	
-	$hitungStr = strlen($PecahStr[$i]);
-	echo $hitungStr[$i];
+	$pecahString = explode(" ", $huruf);
+	$longestWordLength = 0;
+	$longestWord = '';
+
+	for ($i = 0; $i < count($pecahString); $i++) 
+	{
+		if (strlen($pecahString[$i]) >$longestWordLength) {
+	      $longestWordLength = strlen($pecahString[$i]);
+	      $longestWord = $pecahString[$i];
+
+	   }
+		
+	}
+
+	echo $longestWord;
+
 }
+echo cariterpanjang("Halo Arkademian!");
+
+
 ?>
